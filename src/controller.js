@@ -9,6 +9,7 @@ const isPrime= (num) => {
 }
 
 const isPerfect = (num) => {
+    if (num <= 0) return false;
     let sum = 0;
     for (let i = 1; i < num; i++) {
         if (num % i === 0) sum += i;
@@ -16,8 +17,8 @@ const isPerfect = (num) => {
     return sum === num;
 }
 
-const digitSum = (n) => {
-    return n.toString().split('').reduce((sum, digit) => sum + Number(digit), 0);
+const digitSum = (num) => {
+    return Math.abs(num).toString().split('').reduce((sum, digit) => sum + Number(digit), 0);
 }
 
 const isArmstrong = (num) => {
